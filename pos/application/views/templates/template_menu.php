@@ -4,7 +4,7 @@
       
       <li class="submenu"> <a href="#"><i class="icon icon-th"></i> <span>Administración</span></a>
         <ul>
-          <li><a href="<?php echo base_url('administration/empresa')?>">Empresa</a></li>
+          <li><a href="#">Empresa</a></li>
           <li><a href="#">Almacenes</a></li>
           <li><a href="#">Usuarios</a></li>
           <li><a href="#">Roles de Usuario</a></li>
@@ -13,7 +13,7 @@
       
       <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>Ventas</span></a>
         <ul>
-          <li><a href="#">Cotizaciones</a></li>
+          <li><a href="<?php echo base_url('index.php/table');?>">Cotizaciones</a></li>
           <li><a href="#">Pedidos</a></li>
           <li><a href="#">Facturación</a></li>
           <li><a href="#">Entrada de Facturas</a></li>
