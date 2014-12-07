@@ -1,0 +1,22 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.js$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.css$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.pdf$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.doc$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.docs$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.ppt$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.pptx$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.mp4$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.png$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.jpg$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.jpeg$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.gif$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.otf$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.eot$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.svg$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.ttf$
+RewriteCond %{REQUEST_FILENAME} !^(.+)\.woff$
+
+
+RewriteCond $1 !^(index\.php|images|robots\.txt)
+RewriteRule ^(.*)$ /stratton/pos/index.php/$1 [L]
