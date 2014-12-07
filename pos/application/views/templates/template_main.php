@@ -2,15 +2,21 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>STRATTON-ERP</title>
+  <title>STRATTON-POS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap-responsive.min.css" />
   <link rel="stylesheet" href="<?php echo base_url()?>assets/css/fullcalendar.css" />
+  <link rel="stylesheet" href="<?php echo base_url()?>assets/css/uniform.css" /><!-- tables -->
+  <link rel="stylesheet" href="<?php echo base_url()?>assets/css/select2.css" /><!-- tables -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/css/maruti-style.css" />
-  <link rel="stylesheet" href="<?php echo base_url()?>assets/css/uniform.css" />
-  <link rel="stylesheet" href="<?php echo base_url()?>assets/css/select2.css" />
   <link rel="stylesheet" href="<?php echo base_url()?>assets/css/maruti-media.css" class="skin-color" />
+
+
+
+  
+
+
 </head>
 <body>
 
@@ -41,18 +47,24 @@
   <script src="<?php echo base_url()?>assets/js/excanvas.min.js"></script> 
   <script src="<?php echo base_url()?>assets/js/jquery.min.js"></script> 
   <script src="<?php echo base_url()?>assets/js/jquery.ui.custom.js"></script> 
-  <script src="<?php echo base_url()?>assets/js/jquery.dataTables.min.js"></script> 
-  <script src="<?php echo base_url()?>assets/js/select2.min.js"></script> 
-  <script src="<?php echo base_url()?>assets/js/jquery.uniform.js"></script> 
   <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script> 
   <script src="<?php echo base_url()?>assets/js/jquery.flot.min.js"></script> 
   <script src="<?php echo base_url()?>assets/js/jquery.flot.resize.min.js"></script> 
   <script src="<?php echo base_url()?>assets/js/jquery.peity.min.js"></script> 
   <script src="<?php echo base_url()?>assets/js/fullcalendar.min.js"></script> 
-  <script src="<?php echo base_url()?>assets/js/maruti.js"></script> 
+  <script src="<?php echo base_url()?>assets/js/jquery.uniform.js"></script> <!-- TABLES -->
+  <script src="<?php echo base_url()?>assets/js/select2.min.js"></script> <!-- TABLES -->
+  <script src="<?php echo base_url()?>assets/js/jquery.dataTables.min.js"></script> <!-- TABLES -->
+  <script src="<?php echo base_url()?>assets/js/maruti.js"></script>
+  <script src="<?php echo base_url()?>assets/js/maruti.tables.js"></script><!-- TABLES -->
   <script src="<?php echo base_url()?>assets/js/maruti.dashboard.js"></script> 
-  <script src="<?php echo base_url()?>assets/js/maruti.chat.js"></script> 
-    <script src="<?php echo base_url()?>assets/js/maruti.tables.js"></script> 
+  <script src="<?php echo base_url()?>assets/js/maruti.chat.js"></script>
+
+
+
+
+  
+
   <script type="text/javascript">
     // This function is called from the pop-up menus to transfer to
     // a different page. Ignore if the value returned is a null string:
