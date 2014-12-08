@@ -16,7 +16,35 @@
 
 
 	    /***********************************************************************************/
-		#METODO:
+		#METODO: muestra informacion de la empresa
+		function enterprise(){
+			$this->data["vista"]	=	"modules/administration/enterprise";
+			$this->load->view("templates/template_main", $this->data);
+		}
+
+
+	    /***********************************************************************************/
+		#METODO: muestra listado de almacenes de la empresa
+		function stores(){
+			$this->data["vista"]	=	"modules/administration/stores";
+			$this->load->view("templates/template_main", $this->data);
+		}
+
+
+	    /***********************************************************************************/
+		#METODO: muestra listado de usuarios del sistema
+		function users(){
+			$this->data["vista"]	=	"modules/administration/users";
+			$this->load->view("templates/template_main", $this->data);
+		}
+
+
+	    /***********************************************************************************/
+		#METODO: muestra listado de roles de usuario
+		function role(){
+			$this->data["vista"]	=	"modules/administration/role";
+			$this->load->view("templates/template_main", $this->data);
+		}
 
 
 

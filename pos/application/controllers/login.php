@@ -11,7 +11,6 @@
 	    }
 
 
-
 		/***********************************************************************************/
 		#METODO: Muestra el formulario de logueo del sistema
 		function index(){
@@ -23,7 +22,6 @@
 			$this->data["vista"]	=	"modules/login/index";
 			$this->load->view("templates/template_login", $this->data);
 		}
-
 
 		
 		/***********************************************************************************/
@@ -61,15 +59,12 @@
 		}
 
 
-
 		/***********************************************************************************/
 		#METODO: destruye sesion
 		function logout(){
 			session_destroy();
 			redirect(base_url('login'));
 		}
-
-
 
 
 	}

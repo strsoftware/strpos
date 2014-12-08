@@ -16,7 +16,43 @@
 
 
 	    /***********************************************************************************/
-		#METODO: 
+		#METODO: muestra modulo de ajustes de inventario
+		function inventory_adjustments(){
+			$this->data["vista"]	=	"modules/inventory/inventory_adjustments";
+			$this->load->view("templates/template_main", $this->data);
+		}
+
+
+	    /***********************************************************************************/
+		#METODO: muestra modulo de entradas inter sucursales
+		function entries_interstores(){
+			$this->data["vista"]	=	"modules/inventory/entries_interstores";
+			$this->load->view("templates/template_main", $this->data);
+		}
+
+
+	    /***********************************************************************************/
+		#METODO: muestra modulo de salidas inter sucursales
+		function outputs_interstores(){
+			$this->data["vista"]	=	"modules/inventory/outputs_interstores";
+			$this->load->view("templates/template_main", $this->data);
+		}
+
+
+	    /***********************************************************************************/
+		#METODO: muestra modulo de mantenimiento de articulos
+		function articles_maintenance(){
+			$this->data["vista"]	=	"modules/inventory/articles_maintenance";
+			$this->load->view("templates/template_main", $this->data);
+		}
+
+
+	    /***********************************************************************************/
+		#METODO: muestra modulo de mantenimiento de articulos
+		function existence(){
+			$this->data["vista"]	=	"modules/inventory/existence";
+			$this->load->view("templates/template_main", $this->data);
+		}
 
 
 	}

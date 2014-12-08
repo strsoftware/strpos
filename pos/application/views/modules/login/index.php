@@ -5,7 +5,7 @@
   <div id="loginbox">            
     
     <form id="loginform" class="form-vertical" action="<?php echo base_url('login/success')?>" method="post">
-      <div class="control-group normal_text"><h3>STRATTON POS</h3></div>
+      <div class="control-group normal_text"><img src="<?php echo base_url('assets/img/logo_login.png')?>" class="img-responsive" /></div>
       <div class="control-group normal_text title-login" >
       	<?php if(isset($error)){?>
           <div class="alert alert-block alert-danger">

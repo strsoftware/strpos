@@ -4,42 +4,42 @@
       
       <li class="submenu"> <a href="#"><i class="icon icon-th"></i> <span>Administración</span></a>
         <ul>
-          <li><a href="<?php echo base_url('administration/empresa')?>">Empresa</a></li>
-          <li><a href="#">Almacenes</a></li>
-          <li><a href="#">Usuarios</a></li>
-          <li><a href="#">Roles de Usuario</a></li>
+          <li><a href="<?php echo base_url('administration/enterprise')?>">Empresa</a></li>
+          <li><a href="<?php echo base_url('administration/stores')?>">Almacenes</a></li>
+          <li><a href="<?php echo base_url('administration/users')?>">Usuarios</a></li>
+          <li><a href="<?php echo base_url('administration/role')?>">Roles de Usuario</a></li>
         </ul>
       </li>
       
       <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>Ventas</span></a>
         <ul>
-          <li><a href="#">Cotizaciones</a></li>
-          <li><a href="#">Pedidos</a></li>
-          <li><a href="#">Facturación</a></li>
-          <li><a href="#">Entrada de Facturas</a></li>
-          <li><a href="#">Listado de Precios</a></li>
-          <li><a href="#">Mantenimiento de Clientes</a></li>
+          <li><a href="<?php echo base_url('sales/quote')?>">Cotizaciones</a></li>
+          <li><a href="<?php echo base_url('sales/orders')?>">Pedidos</a></li>
+          <li><a href="<?php echo base_url('sales/invoicing')?>">Facturación</a></li>
+          <li><a href="<?php echo base_url('sales/invoice_entry')?>">Entrada de Facturas</a></li>
+          <li><a href="<?php echo base_url('sales/price_list')?>">Listado de Precios</a></li>
+          <li><a href="<?php echo base_url('sales/customer_maintenance')?>">Mantenimiento de Clientes</a></li>
         </ul>
       </li>
       
       <li class="submenu"> <a href="#"><i class="icon icon-shopping-cart"></i> <span>Compras</span></a>
         <ul>
-          <li><a href="#">Órdenes de Compra</a></li>
-          <li><a href="#">Recibos por Compra</a></li>
-          <li><a href="#">Entrada de Facturas</a></li>
-          <li><a href="#">Mantenimiento de Artículos</a></li>
-          <li><a href="#">Mantenimiento de Almacenes</a></li>
-          <li><a href="#">Mantenimiento de Proveedores</a></li>
+          <li><a href="<?php echo base_url('purchases/purchase_order')?>">Órdenes de Compra</a></li>
+          <li><a href="<?php echo base_url('purchases/purchase_receipt')?>">Recibos por Compra</a></li>
+          <li><a href="<?php echo base_url('purchases/invoice_entry')?>">Entrada de Facturas</a></li>
+          <li><a href="<?php echo base_url('purchases/articles_maintenance')?>">Mantenimiento de Artículos</a></li>
+          <li><a href="<?php echo base_url('purchases/stores_maintenance')?>">Mantenimiento de Almacenes</a></li>
+          <li><a href="<?php echo base_url('purchases/providers_maintenance')?>">Mantenimiento de Proveedores</a></li>
         </ul>
       </li>
       
       <li class="submenu"> <a href="#"><i class="icon icon-edit"></i> <span>Inventario</span></a>
         <ul>
-          <li><a href="#">Ajustes de Inventario</a></li>
-          <li><a href="#">Entradas Intersucursales</a></li>
-          <li><a href="#">Salidas Intersucursales</a></li>
-          <li><a href="#">Mantenimiento de Artículos</a></li>
-          <li><a href="#">Existencias</a></li>
+          <li><a href="<?php echo base_url('inventory/inventory_adjustments')?>">Ajustes de Inventario</a></li>
+          <li><a href="<?php echo base_url('inventory/entries_interstores')?>">Entradas Intersucursales</a></li>
+          <li><a href="<?php echo base_url('inventory/outputs_interstores')?>">Salidas Intersucursales</a></li>
+          <li><a href="<?php echo base_url('inventory/articles_maintenance')?>">Mantenimiento de Artículos</a></li>
+          <li><a href="<?php echo base_url('inventory/existence')?>">Existencias</a></li>
         </ul>
       </li>
       
