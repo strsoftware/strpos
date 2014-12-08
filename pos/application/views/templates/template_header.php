@@ -24,7 +24,7 @@
         <a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Configuración</span></a>
       </li>
       <li class="">
-        <a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Salir</span></a>
+        <a title="" href="<?php echo base_url('login/logout')?>"><i class="icon icon-share-alt"></i> <span class="text">Salir</span></a>
       </li>
     </ul>
   </div>

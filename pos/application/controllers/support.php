@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	require_once(APPPATH.'controllers/STR_Controller.php');
-	class home extends STR_Controller {
+	class support extends STR_Controller {
 
 
 		/***********************************************************************************/
@@ -10,17 +10,14 @@
 	        if (!isset($_SESSION['pos_user_id'])) {
 				redirect(base_url('login'));
 	  		}else{
-	  			$this->load->model('home_model');
+	  			$this->load->model('support_model');
 	  		}
 	    }
 
 
 	    /***********************************************************************************/
-		#METODO: Muestra el panel principal de la aplicacion
-		function index(){
-			$this->data['vista']	=	"modules/home/index";
-			$this->load->view('templates/template_main', $this->data);
-		}
-	}
+		#METODO: 
 
+
+	}
 ?>

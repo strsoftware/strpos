@@ -1,13 +1,24 @@
-<?php
-	class administration extends CI_Controller{
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+	require_once(APPPATH.'controllers/STR_Controller.php');
+	class administration extends STR_Controller {
 
-		function empresa(){
-			$this->data['header']	=	"templates/template_header";
-			$this->data['menu']		=	"templates/template_menu";
-			$this->data['vista']	=	"modules/administration/empresa";    //totas las vistas deberan se van a manejar como modulos bajo el esquema anterios   modulos/CONTROLADOR/METODO
-			$this->data['footer']	=	"templates/template_footer";
-			$this->load->view('templates/template_main', $this->data);
-		}
+
+		/***********************************************************************************/
+		#CONSTRUCTOR DEL CONTROLADOR
+		public function __construct(){
+	        parent::__construct();
+	        if (!isset($_SESSION['pos_user_id'])) {
+				redirect(base_url('login'));
+	  		}else{
+	  			$this->load->model('administration_model');
+	  		}
+	    }
+
+
+	    /***********************************************************************************/
+		#METODO:
+
+
 
 	}
 ?>
