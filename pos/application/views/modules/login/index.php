@@ -35,23 +35,8 @@
             </div>
         </div>
         <div class="form-actions">
-            <span class="pull-left"><a href="#" class="flip-link btn btn-warning" id="to-recover">Perdio su passwordd?</a></span>
-            <span class="pull-right"><input type="submit" class="btn btn-success" value="Entrar" /></span>
+            <span class="pull-right"><input type="submit" class="btn btn-success" value="Ingresar" /></span>
         </div>
-    </form>
-
-    <form id="recoverform" action="#" class="form-vertical">
-			<p class="normal_text">Ingrese su email para que podamos <br/><font color="#FF6633">recuperar su password.</font></p>
-      <div class="controls">
-        <div class="main_input_box">
-          <span class="add-on"><i class="icon-envelope"></i></span><input type="text" placeholder="E-mail address" />
-        </div>
-      </div>
-         
-      <div class="form-actions">
-        <span class="pull-left"><a href="#" class="flip-link btn btn-warning" id="to-login">&laquo; Regresar al Login</a></span>
-        <span class="pull-right"><input type="submit" class="btn btn-info" value="Recuperar" /></span>
-      </div>
     </form>
 
   </div>
