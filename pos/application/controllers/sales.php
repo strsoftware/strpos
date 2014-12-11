@@ -58,45 +58,40 @@
 	    /***********************************************************************************/
 		#METODO: muestra modulo administrador de clientes
 		function customer_maintenance(){
-			$this->data["result"]= $this->sales_model->getCustomer("");
+			$this->data["result"]	= 	$this->sales_model->getCustomer("");
 			$this->data["vista"]	=	"modules/sales/customer_maintenance";
 			$this->load->view("templates/template_main", $this->data);
 		}
 
 
-		function customer_new(){
+		function customer($accion, $id = false){
+			if($_POST){
+				$codigo 	=	$this->sales_model->setCustomer($this->input->post(), $_SESSION['pos_user_id'], $accion);
+				if ($codigo > 0) {
+					if ($accion == "crear") { $_SESSION['ok']= "Registro creado exitosamente."; }else
+					if ($accion == "editar") { $_SESSION['ok']= "Registro actualizado exitosamente."; }
+				}else{ $_SESSION['error']= "Ocurrio un error al guardar."; }
+				redirect(base_url('sales/customer/editar/'.$codigo));
 
-			$this->data["vista"] = "modules/sales/customer_edit";
-			$this->load->view("templates/template_main", $this->data);
+			}else if($id){
+				$this->data["title"] 	= 	"Editar Registro";
+				$this->data["accion"] 	= 	"editar";
+				$this->data["row"]		= 	$this->sales_model->getCustomer($id);
 
-		}
+			}else{
+				$this->data["title"] 	= 	"Crear Registro";
+				$this->data["accion"] 	= 	"crear";
 
-		function customer_new_success(){
-			if ($_POST) {
-				$this->sales_model->setCustomerInsert($this->input->post());
-				$_SESSION['ok']= "clientes creado exitosamente"	;		
 			}
-			$this->data["vista"]	=	"modules/sales/customer_maintenance";
-			$this->load->view("templates/template_main", $this->data);
-		}
 
+			if (isset($_SESSION['ok'])) { $this->data["ok"] = $_SESSION['ok']; unset($_SESSION['ok']); }
+			if (isset($_SESSION['error'])) { $this->data["error"] = $_SESSION['error']; unset($_SESSION['error']); }
 
-		function customer_edit($id){
-			$query 					=	$this->sales_model->getCustomer($id);
-			$this->data["result"]	= 	$query[0];
-			$this->data["vista"] = "modules/sales/customer_edit";
-			$this->load->view("templates/template_main", $this->data);
-		}
-
-		function customer_edit_success(){
-			if ($_POST) {
-				$this->sales_model->setCustomerUpdate($this->input->post());
-				$_SESSION['ok']="cliente actualizado corresctamente";
-			}
-			$this->data["vista"]	=	"modules/sales/customer_maintenance";
+			$this->data["vista"] 	= 	"modules/sales/customer";
 			$this->load->view("templates/template_main", $this->data);
 
 		}
+
 
 	}
 ?>

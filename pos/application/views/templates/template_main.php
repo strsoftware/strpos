@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="<?php echo base_url()?>assets/css/select2.css" /><!-- tables -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/css/maruti-style.css" />
   <link rel="stylesheet" href="<?php echo base_url()?>assets/css/maruti-media.css" class="skin-color" />
+  <link rel="stylesheet" href="<?php echo base_url()?>assets/css/stratton-style.css" />
 </head>
 <body>
 
