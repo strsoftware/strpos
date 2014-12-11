@@ -13,27 +13,18 @@
 
 
         function setCustomer($post, $user, $accion){
-
             if ($accion == "crear") {
-                $this->db->query("INSERT INTO pos_client(pos_client_fullname, pos_client_address, pos_client_nit, pos_client_phone, pos_user_id) 
-                            VALUES('$post[pos_client_fullname]', '$post[pos_client_address]', '$post[pos_client_nit]', '$post[pos_client_phone]', $user) ");
+                $this->db->insert("pos_client", $post);
                 return $this->db->insert_id();
 
             }else if ($accion == "editar") {
-                $this->db->query("UPDATE pos_client SET 
-                            pos_client_fullname     =   '$post[pos_client_fullname]',
-                            pos_client_address      =   '$post[pos_client_address]',
-                            pos_client_nit          =   '$post[pos_client_nit]',
-                            pos_client_phone        =   '$post[pos_client_phone]'
-                            WHERE pos_client_id     =    $post[pos_client_id] ");
-
+                $this->db->where('pos_client_id', $post['pos_client_id'])->update('pos_client',$post);
                 return $post['pos_client_id'];
+
             }
-
-           
-
         }
 
-		
+
+
 	}
 ?>

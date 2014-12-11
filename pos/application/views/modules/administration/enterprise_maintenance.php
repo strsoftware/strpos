@@ -1,8 +1,8 @@
   <div id="content">
     <div id="content-header">
       <div id="breadcrumb"> <a href="<?php echo base_url()?>" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a>
-      <a href="<?php echo base_url('sales/customer')?>" class="current">Mantenimiento de Clientes</a> </div>
-    <!--  <h1>Mantenimiento de Clientes</h1> -->
+      <a href="<?php echo base_url('administration/enterprise')?>" class="current">Empresa</a> </div>
+    <!--  <h1>Empresa</h1> -->
     </div>
 
     <div class="container-fluid">
@@ -12,12 +12,12 @@
         <!--  INICIO DEL CODIGO DE LA VISTA-->
 
 
-          <a href="<?php echo base_url('sales/customer/crear')?>" class="btn btn-warning">Nuevo Cliente</a>
+          <a href="<?php echo base_url('administration/enterprise/crear')?>" class="btn btn-warning">Nueva Empresa</a>
 
           <div class="widget-box">
             <div class="widget-title">
-              <span class="icon"><i class="icon-th"></i></span> 
-              <h5>Datos de Clientes</h5>
+              <span class="icon"><i class="icon-home"></i></span> 
+              <h5>Empresas</h5>
             </div>
             <div class="widget-content nopadding">
               <table class="table table-bordered data-table">
@@ -37,15 +37,15 @@
                       foreach ($result as $row) {
                   ?>
                   <tr class="gradeA">
-                    <td><?php echo $row->pos_client_id?></td>
-                    <td><?php echo $row->pos_client_fullname?></td>
-                    <td><?php echo $row->pos_client_address?></td>
-                    <td><?php echo $row->pos_client_nit?></td>
-                    <td><?php echo $row->pos_client_phone?></td>
+                    <td><?php echo $row->pos_enterprise_id?></td>
+                    <td><?php echo $row->pos_enterprise_name?></td>
+                    <td><?php echo $row->pos_enterprise_address?></td>
+                    <td><?php echo $row->pos_enterprise_nit?></td>
+                    <td><?php echo $row->pos_enterprise_phone?></td>
                     <td>
                       <div class="str-pagination">
                         <ul>
-                          <li><a href="<?php echo base_url('sales/customer/editar/'.$row->pos_client_id)?>" title="Editar"><i class="icon-edit"></i></a></li>
+                          <li><a href="<?php echo base_url('administration/enterprise/editar/'.$row->pos_enterprise_id)?>" title="Editar"><i class="icon-edit"></i></a></li>
                           <li><a href="#" title="Eliminar"><i class="icon-trash"></i></a></li>
                         </ul>
                       </div>

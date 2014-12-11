@@ -5,7 +5,6 @@
       <li class="submenu"> <a href="#"><i class="icon icon-th"></i> <span>Administración</span></a>
         <ul>
           <li><a href="<?php echo base_url('administration/enterprise')?>">Empresa</a></li>
-          <li><a href="<?php echo base_url('administration/stores')?>">Almacenes</a></li>
           <li><a href="<?php echo base_url('administration/users')?>">Usuarios</a></li>
           <li><a href="<?php echo base_url('administration/role')?>">Roles de Usuario</a></li>
         </ul>
@@ -18,7 +17,7 @@
           <li><a href="<?php echo base_url('sales/invoicing')?>">Facturación</a></li>
           <li><a href="<?php echo base_url('sales/invoice_entry')?>">Entrada de Facturas</a></li>
           <li><a href="<?php echo base_url('sales/price_list')?>">Listado de Precios</a></li>
-          <li><a href="<?php echo base_url('sales/customer_maintenance')?>">Mantenimiento de Clientes</a></li>
+          <li><a href="<?php echo base_url('sales/customer')?>">Mantenimiento de Clientes</a></li>
         </ul>
       </li>
       
@@ -27,9 +26,9 @@
           <li><a href="<?php echo base_url('purchases/purchase_order')?>">Órdenes de Compra</a></li>
           <li><a href="<?php echo base_url('purchases/purchase_receipt')?>">Recibos por Compra</a></li>
           <li><a href="<?php echo base_url('purchases/invoice_entry')?>">Entrada de Facturas</a></li>
-          <li><a href="<?php echo base_url('purchases/articles_maintenance')?>">Mantenimiento de Artículos</a></li>
-          <li><a href="<?php echo base_url('purchases/stores_maintenance')?>">Mantenimiento de Almacenes</a></li>
-          <li><a href="<?php echo base_url('purchases/providers_maintenance')?>">Mantenimiento de Proveedores</a></li>
+          <li><a href="<?php echo base_url('purchases/articles')?>">Mantenimiento de Artículos</a></li>
+          <li><a href="<?php echo base_url('purchases/stores')?>">Mantenimiento de Almacenes</a></li>
+          <li><a href="<?php echo base_url('purchases/providers')?>">Mantenimiento de Proveedores</a></li>
         </ul>
       </li>
       
@@ -58,7 +57,7 @@
       
       <li class="submenu"> <a href="#"><i class="icon icon-list"></i> <span>Mantenimientos</span></a>
         <ul>
-          <li><a href="#">Artículos</a></li>
+          <li><a href="<?php echo base_url('maintenance/articles')?>">Artículos</a></li>
           <li><a href="#">Clientes</a></li>
           <li><a href="#">Proveedores</a></li>
           <li><a href="#">Productos</a></li>

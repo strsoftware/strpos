@@ -1,8 +1,8 @@
   <div id="content">
     <div id="content-header">
       <div id="breadcrumb"> <a href="<?php echo base_url()?>" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a>
-      <a href="<?php echo base_url('sales/customer')?>" class="current"><?php echo $title;?></a> </div>
-      <h1><?php echo $title;?></h1>
+      <a href="<?php echo base_url('sales/customer/'.$accion.'/'.$row->pos_client_id)?>" class="current"><?php echo $title;?></a> </div>
+    <!--  <h1><?php echo $title;?></h1> -->
     </div>
 
     <div class="container-fluid">
@@ -12,7 +12,7 @@
         <!--  INICIO DEL CODIGO DE LA VISTA-->
 
 
-            <a tabindex="7" href="<?php echo base_url('sales/customer')?>" class="btn btn-warning">Crear Cliente</a>
+            <a href="<?php echo base_url('sales/customer/crear')?>" class="btn btn-warning">Nuevo Cliente</a>
 
 
             <div class="widget-box">
@@ -46,6 +46,12 @@
                 <form action="<?php echo base_url('sales/customer/'.$accion)?>" method="post" class="form-horizontal" name="form">
 
                   <div class="control-group">
+                    <div class="controls">
+                      <input type="hidden" tabindex="7" class="span20" name="pos_client_id" value="<?php echo $row->pos_client_id ?>" required="required"/>
+                    </div>
+                  </div>
+
+                  <div class="control-group">
                     <label class="control-label">Nombe de Cliente: <span class="obligatorio">*</span></label>
                     <div class="controls">
                       <input type="text" tabindex="1" class="span20" name="pos_client_fullname" placeholder="Nombre del cliente" value="<?php echo $row->pos_client_fullname?>" required="required"/>
@@ -67,21 +73,15 @@
                   </div>
 
                   <div class="control-group">
-                    <label class="control-label">Teléfono: <span class="obligatorio">*</span></label>
+                    <label class="control-label">Teléfono: </label>
                     <div class="controls">
-                      <input type="text" tabindex="4" class="span20" name="pos_client_phone" placeholder="Teléfono del cliente" value="<?php echo $row->pos_client_phone?>" required="required"/>
-                    </div>
-                  </div>
-
-                  <div class="control-group">
-                    <div class="controls">
-                      <input type="hidden" class="span20" name="pos_client_id" value="<?php echo $row->pos_client_id ?>" required="required"/>
+                      <input type="text" tabindex="4" class="span20" name="pos_client_phone" placeholder="Teléfono del cliente" value="<?php echo $row->pos_client_phone?>"/>
                     </div>
                   </div>
                   
                   <div class="form-actions">
                     <button type="submit" tabindex="5" class="btn btn-info str-btn"><?php echo $title;?></button>
-                    <a tabindex="6" href="<?php echo base_url('sales/customer_maintenance')?>" class="btn btn-danger str-btn">Cancelar</a>
+                    <a tabindex="6" href="<?php echo base_url('sales/customer')?>" class="btn btn-danger str-btn">Salir</a>
                   </div>
 
                 </form>

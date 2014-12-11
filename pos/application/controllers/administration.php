@@ -16,9 +16,37 @@
 
 
 	    /***********************************************************************************/
-		#METODO: muestra informacion de la empresa
-		function enterprise(){
-			$this->data["vista"]	=	"modules/administration/enterprise";
+		#METODO: muestra listado de empresas creadas
+		function enterprise($accion, $id = false){
+			if($_POST){
+				$codigo 	=	$this->administration_model->setEnterprise($this->input->post(), $_SESSION['pos_user_id'], $accion);
+				if ($codigo > 0) {
+					if ($accion == "crear") { $_SESSION['ok']  = "REGÍSTRO CREADO EXITOSAMENTE"; }else
+					if ($accion == "editar") { $_SESSION['ok'] = "REGÍSTRO ACTUALIZADO EXITOSAMENTE"; }
+				}else{ $_SESSION['error'] = "OCURRIO UN PROBLEMA, POR FAVOR INTENTE DE NUEVO"; }
+				redirect(base_url('administration/enterprise/crear'));
+
+			}else if($id){
+				$this->data["title"] 	= 	"Editar Empresa";
+				$this->data["accion"] 	= 	"editar";
+
+				$this->data["vista"] 	= 	"modules/administration/enterprise";
+				$this->data["row"]		= 	$this->administration_model->getEnterprise($id);
+
+			}else if($accion == "crear"){
+				$this->data["title"] 	= 	"Crear Empresa";
+				$this->data["accion"] 	= 	"crear";
+				$this->data["focus"] 	= 	"pos_client_fullname";
+				$this->data["vista"] 	= 	"modules/administration/enterprise";
+
+			}else{
+				$this->data["result"]	= 	$this->administration_model->getEnterprise();
+				$this->data["vista"]	=	"modules/administration/enterprise_maintenance";
+			}
+
+			if (isset($_SESSION['ok'])) { 	$this->data["ok"] = $_SESSION['ok']; unset($_SESSION['ok']); }
+			if (isset($_SESSION['error'])){ $this->data["error"] = $_SESSION['error']; unset($_SESSION['error']); }
+
 			$this->load->view("templates/template_main", $this->data);
 		}
 

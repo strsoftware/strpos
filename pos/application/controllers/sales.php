@@ -57,40 +57,37 @@
 
 	    /***********************************************************************************/
 		#METODO: muestra modulo administrador de clientes
-		function customer_maintenance(){
-			$this->data["result"]	= 	$this->sales_model->getCustomer();
-			$this->data["vista"]	=	"modules/sales/customer_maintenance";
-			$this->load->view("templates/template_main", $this->data);
-		}
-
-
 		function customer($accion, $id = false){
 			if($_POST){
 				$codigo 	=	$this->sales_model->setCustomer($this->input->post(), $_SESSION['pos_user_id'], $accion);
 				if ($codigo > 0) {
-					if ($accion == "crear") { $_SESSION['ok']= "Registro creado exitosamente."; }else
-					if ($accion == "editar") { $_SESSION['ok']= "Registro actualizado exitosamente."; }
-				}else{ $_SESSION['error']= "Ocurrio un error al guardar."; }
-				#redirect(base_url('sales/customer/editar/'.$codigo));
-				redirect(base_url('sales/customer/'));
+					if ($accion == "crear") { $_SESSION['ok']  = "REGÍSTRO CREADO EXITOSAMENTE"; }else
+					if ($accion == "editar") { $_SESSION['ok'] = "REGÍSTRO ACTUALIZADO EXITOSAMENTE"; }
+				}else{ $_SESSION['error'] = "OCURRIO UN PROBLEMA, POR FAVOR INTENTE DE NUEVO"; }
+				redirect(base_url('sales/customer/crear'));
+
 			}else if($id){
-				$this->data["title"] 	= 	"Editar Regístro";
+				$this->data["title"] 	= 	"Editar Cliente";
 				$this->data["accion"] 	= 	"editar";
+
+				$this->data["vista"] 	= 	"modules/sales/customer";
 				$this->data["row"]		= 	$this->sales_model->getCustomer($id);
 
-			}else{
-				$this->data["title"] 	= 	"Crear Regístro";
+			}else if($accion == "crear"){
+				$this->data["title"] 	= 	"Crear Cliente";
 				$this->data["accion"] 	= 	"crear";
 				$this->data["focus"] 	= 	"pos_client_fullname";
+				$this->data["vista"] 	= 	"modules/sales/customer";
 
+			}else{
+				$this->data["result"]	= 	$this->sales_model->getCustomer();
+				$this->data["vista"]	=	"modules/sales/customer_maintenance";
 			}
 
-			if (isset($_SESSION['ok'])) { $this->data["ok"] = $_SESSION['ok']; unset($_SESSION['ok']); }
-			if (isset($_SESSION['error'])) { $this->data["error"] = $_SESSION['error']; unset($_SESSION['error']); }
+			if (isset($_SESSION['ok'])) { 	$this->data["ok"] = $_SESSION['ok']; unset($_SESSION['ok']); }
+			if (isset($_SESSION['error'])){ $this->data["error"] = $_SESSION['error']; unset($_SESSION['error']); }
 
-			$this->data["vista"] 	= 	"modules/sales/customer";
 			$this->load->view("templates/template_main", $this->data);
-
 		}
 
 
