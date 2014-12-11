@@ -389,6 +389,15 @@ a:hover {
 .quick-actions i.icon-shopping-bag {
 	background-image: url('../img/icons/32/shopping-bag.png');
 }
+.quick-actions i.icon-sales {
+	background-image: url('../img/icons/32/sales.png');
+}
+.quick-actions i.icon-help {
+	background-image: url('../img/icons/32/help.png');
+}
+.quick-actions i.icon-invoicing {
+	background-image: url('../img/icons/32/invoicing.png');
+}
 .quick-actions i.icon-survey {
 	background-image: url('../img/icons/32/survey.png');
 }

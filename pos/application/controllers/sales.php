@@ -58,7 +58,7 @@
 	    /***********************************************************************************/
 		#METODO: muestra modulo administrador de clientes
 		function customer_maintenance(){
-			$this->data["result"]	= 	$this->sales_model->getCustomer("");
+			$this->data["result"]	= 	$this->sales_model->getCustomer();
 			$this->data["vista"]	=	"modules/sales/customer_maintenance";
 			$this->load->view("templates/template_main", $this->data);
 		}
@@ -71,16 +71,17 @@
 					if ($accion == "crear") { $_SESSION['ok']= "Registro creado exitosamente."; }else
 					if ($accion == "editar") { $_SESSION['ok']= "Registro actualizado exitosamente."; }
 				}else{ $_SESSION['error']= "Ocurrio un error al guardar."; }
-				redirect(base_url('sales/customer/editar/'.$codigo));
-
+				#redirect(base_url('sales/customer/editar/'.$codigo));
+				redirect(base_url('sales/customer/'));
 			}else if($id){
-				$this->data["title"] 	= 	"Editar Registro";
+				$this->data["title"] 	= 	"Editar Regístro";
 				$this->data["accion"] 	= 	"editar";
 				$this->data["row"]		= 	$this->sales_model->getCustomer($id);
 
 			}else{
-				$this->data["title"] 	= 	"Crear Registro";
+				$this->data["title"] 	= 	"Crear Regístro";
 				$this->data["accion"] 	= 	"crear";
+				$this->data["focus"] 	= 	"pos_client_fullname";
 
 			}
 

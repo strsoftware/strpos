@@ -1,4 +1,4 @@
-  <div id="content" style="height:600px;">
+  <div id="content">
     <div id="content-header">
       <div id="breadcrumb"> <a href="<?php echo base_url()?>" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a>
       <a href="<?php echo base_url('sales/customer_maintenance')?>" class="current">Mantenimiento de Clientes</a> </div>
@@ -11,7 +11,8 @@
            
         <!--  INICIO DEL CODIGO DE LA VISTA-->
 
-          <a href="<?php echo base_url('sales/customer')?>" class="btn btn-info">Agregar Cliente</a>
+
+          <a href="<?php echo base_url('sales/customer')?>" class="btn btn-warning">Crear Cliente</a>
 
           <div class="widget-box">
             <div class="widget-title">
@@ -22,12 +23,12 @@
               <table class="table table-bordered data-table">
                 <thead>
                   <tr>
-                    <th style="width:10%;">Código</th>
-                    <th style="width:30%;">Nombre</th>
-                    <th style="width:30%;">Dirección</th>
-                    <th style="width:10%;">Nit</th>
-                    <th style="width:10%;">Teléfono</th>
-                    <th style="width:10%;">Acciones</th>
+                    <th style="width:10%;">CÓDIGO</th>
+                    <th style="width:30%;">NOMBRE</th>
+                    <th style="width:30%;">DIRECCIÓN</th>
+                    <th style="width:10%;">NIT</th>
+                    <th style="width:10%;">TELÉFONO</th>
+                    <th style="width:10%;">ACCIONES</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -42,8 +43,14 @@
                     <td><?php echo $row->pos_client_nit?></td>
                     <td><?php echo $row->pos_client_phone?></td>
                     <td>
-                      <a href="<?php echo base_url('sales/customer/editar/'.$row->pos_client_id)?>" class="btn btn-default btn-mini" title="Editar"><i class="icon-edit"></i></a>
-                      <a href="#" class="btn btn-default btn-mini" title="Eliminar"><i class="icon-trash"></i></a>
+                      <div class="str-pagination">
+                        <ul>
+                          <li><a href="<?php echo base_url('sales/customer/editar/'.$row->pos_client_id)?>" title="Editar"><i class="icon-edit"></i></a></li>
+                          <li><a href="#" title="Eliminar"><i class="icon-trash"></i></a></li>
+                        </ul>
+                      </div>
+                      
+                      
                     </td>
                   </tr>
                   <?php

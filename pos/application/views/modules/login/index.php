@@ -1,5 +1,5 @@
 	<div id="logo">
-    <img src="<?php echo base_url()?>assets/img/login-logo.png" alt="" />
+    <img src="<?php echo base_url()?>assets/img/login-logo.png" class="img-responsive" />
   </div>
   
   <div id="loginbox">            

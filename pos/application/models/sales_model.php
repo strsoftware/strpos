@@ -2,7 +2,7 @@
 	class sales_model extends CI_Model{
 
 
-        function getCustomer($id){
+        function getCustomer($id = false){
         	if ($id) {
         		$result    =   $this->db->where("pos_client_id", $id)->get("pos_client")->row();
         	}else{

@@ -9,7 +9,7 @@
   <div id="user-nav" class="navbar navbar-inverse">
     <ul class="nav">
       <li class=" dropdown" id="menu-messages">
-        <a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-user"></i> <span class="text">Datos de Perfil</span> <b class="caret"></b></a>
+        <a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-user"></i> <span class="text"><?php echo $_SESSION['pos_user_nick']?></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li>
             <a href="#"><i class="icon icon-user"></i> <span class="text">Perfil</span></a>

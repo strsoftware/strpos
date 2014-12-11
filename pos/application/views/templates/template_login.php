@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css')?>" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap-responsive.min.css')?>" />
     <link rel="stylesheet" href="<?php echo base_url('assets/css/maruti-login.css')?>" />
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/stratton-adds.css')?>" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/stratton-style.css')?>" />
 </head>
 <body>
   
