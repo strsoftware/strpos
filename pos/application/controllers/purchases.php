@@ -57,8 +57,42 @@
 
 	    /***********************************************************************************/
 		#METODO: muestra modulo de administracion de proveedores
-		function providers_maintenance(){
+		/*function providers_maintenance(){
 			$this->data["vista"]	=	"modules/purchases/providers_maintenance";
+			$this->load->view("templates/template_main", $this->data);
+		}*/
+
+
+		function provider($accion, $id = false){
+			if($_POST){
+				$codigo 	=	$this->purchases_model->setProvider($this->input->post(), $_SESSION['pos_user_id'], $accion);
+				if ($codigo > 0) {
+					if ($accion == "crear") { $_SESSION['ok']  = "REGÍSTRO CREADO EXITOSAMENTE"; }else
+					if ($accion == "editar") { $_SESSION['ok'] = "REGÍSTRO ACTUALIZADO EXITOSAMENTE"; }
+				}else{ $_SESSION['error'] = "OCURRIO UN PROBLEMA, POR FAVOR INTENTE DE NUEVO"; }
+				redirect(base_url('purchases/provider/crear'));
+
+			}else if($id){
+				$this->data["title"] 	= 	"Editar Proveedor";
+				$this->data["accion"] 	= 	"editar";
+
+				$this->data["vista"] 	= 	"modules/purchases/provider";
+				$this->data["row"]		= 	$this->purchases_model->getProvider($id);
+
+			}else if($accion == "crear"){
+				$this->data["title"] 	= 	"Crear Proveedor";
+				$this->data["accion"] 	= 	"crear";
+				$this->data["focus"] 	= 	"pos_provider_fullname";
+				$this->data["vista"] 	= 	"modules/purchases/provider";
+
+			}else{
+				$this->data["result"]	= 	$this->purchases_model->getProvider();
+				$this->data["vista"]	=	"modules/purchases/providers_maintenance";
+			}
+
+			if (isset($_SESSION['ok'])) { 	$this->data["ok"] = $_SESSION['ok']; unset($_SESSION['ok']); }
+			if (isset($_SESSION['error'])){ $this->data["error"] = $_SESSION['error']; unset($_SESSION['error']); }
+
 			$this->load->view("templates/template_main", $this->data);
 		}
 
