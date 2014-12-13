@@ -1,7 +1,7 @@
   <div id="content">
     <div id="content-header">
       <div id="breadcrumb"> <a href="<?php echo base_url()?>" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a>
-      <a href="<?php echo base_url('administration/enterprise/'.$accion.'/'.$row->pos_client_id)?>" class="current"><?php echo $title;?></a> </div>
+      <a href="<?php echo base_url('administration/enterprise/'.$accion.'/'.$row->pos_enterprise_id)?>" class="current"><?php echo $title;?></a> </div>
     <!--  <h1><?php echo $title;?></h1> -->
     </div>
 

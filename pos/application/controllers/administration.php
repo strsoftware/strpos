@@ -36,7 +36,7 @@
 			}else if($accion == "crear"){
 				$this->data["title"] 	= 	"Crear Empresa";
 				$this->data["accion"] 	= 	"crear";
-				$this->data["focus"] 	= 	"pos_client_fullname";
+				$this->data["focus"] 	= 	"pos_enterprise_name";
 				$this->data["vista"] 	= 	"modules/administration/enterprise";
 
 			}else{
@@ -52,14 +52,6 @@
 
 
 	    /***********************************************************************************/
-		#METODO: muestra listado de almacenes de la empresa
-		function stores(){
-			$this->data["vista"]	=	"modules/administration/stores";
-			$this->load->view("templates/template_main", $this->data);
-		}
-
-
-	    /***********************************************************************************/
 		#METODO: muestra listado de usuarios del sistema
 		function users(){
 			$this->data["vista"]	=	"modules/administration/users";
@@ -68,9 +60,42 @@
 
 
 	    /***********************************************************************************/
-		#METODO: muestra listado de roles de usuario
-		function role(){
-			$this->data["vista"]	=	"modules/administration/role";
+		#METODO: muestra listado de almacenes de la empresa
+		function modules($accion, $id = false){
+			if($_POST){
+				$codigo 	=	$this->administration_model->setModule($this->input->post(), $_SESSION['pos_user_id'], $accion);
+				if ($codigo > 0) {
+					if ($accion == "crear") { $_SESSION['ok']  = "REGÍSTRO CREADO EXITOSAMENTE"; }else
+					if ($accion == "editar") { $_SESSION['ok'] = "REGÍSTRO ACTUALIZADO EXITOSAMENTE"; }
+				}else{ $_SESSION['error'] = "OCURRIO UN PROBLEMA, POR FAVOR INTENTE DE NUEVO"; }
+				redirect(base_url('administration/modules/crear'));
+
+			}else if($id){
+				$this->data["title"] 	= 	"Editar Módulo";
+				$this->data["accion"] 	= 	"editar";
+
+				$this->data["vista"] 	= 	"modules/administration/modules";
+
+				$this->data["row"]		= 	$this->administration_model->getModule($id);
+				$this->data["status"]	= 	$this->administration_model->getModuleStatus();
+				$this->data["module"]	= 	$this->STR_model->getModuleClassification();
+
+			}else if($accion == "crear"){
+				$this->data["title"] 	= 	"Crear Módulo";
+				$this->data["accion"] 	= 	"crear";
+				$this->data["focus"] 	= 	"pos_module_name";
+				$this->data["vista"] 	= 	"modules/administration/modules";
+				$this->data["status"]	= 	$this->administration_model->getModuleStatus();
+				$this->data["module"]	= 	$this->STR_model->getModuleClassification();
+
+			}else{
+				$this->data["result"]	= 	$this->administration_model->getModule();
+				$this->data["vista"]	=	"modules/administration/modules_maintenance";
+			}
+
+			if (isset($_SESSION['ok'])) { 	$this->data["ok"] = $_SESSION['ok']; unset($_SESSION['ok']); }
+			if (isset($_SESSION['error'])){ $this->data["error"] = $_SESSION['error']; unset($_SESSION['error']); }
+
 			$this->load->view("templates/template_main", $this->data);
 		}
 

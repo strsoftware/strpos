@@ -25,10 +25,10 @@
                   <tr>
                     <th style="width:8%;">CÓDIGO</th>
                     <th style="width:25%;">NOMBRE</th>
-                    <th style="width:32%;">DIRECCIÓN</th>
+                    <th style="width:37%;">DIRECCIÓN</th>
                     <th style="width:10%;">NIT</th>
                     <th style="width:10%;">TELÉFONO</th>
-                    <th style="width:15%;">ACCIONES</th>
+                    <th style="width:10%;">ACCIONES</th>
                   </tr>
                 </thead>
                 <tbody>

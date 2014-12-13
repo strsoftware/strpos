@@ -2,7 +2,7 @@
 	class purchases_model extends CI_Model{
 
 
-		        function getProvider($id = false){
+		function getProvider($id = false){
         	if ($id) {
         		$result    =   $this->db->where("pos_provider_id", $id)->get("pos_provider")->row();
         	}else{
@@ -23,6 +23,13 @@
                 return $post['pos_provider_id'];
 
             }
+        }
+
+
+
+        function getStatusProvider(){
+            $result    =   $this->db->get("pos_provider_status")->result();
+            return $result;
         }
 
 

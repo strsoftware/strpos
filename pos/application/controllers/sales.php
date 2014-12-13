@@ -40,14 +40,6 @@
 
 
 	    /***********************************************************************************/
-		#METODO: muestra formulario para ingresar facturas de ventas
-		function invoice_entry(){
-			$this->data["vista"]	=	"modules/sales/invoice_entry";
-			$this->load->view("templates/template_main", $this->data);
-		}
-
-
-	    /***********************************************************************************/
 		#METODO: muestra listado de productos con sus respectivos precios
 		function price_list(){
 			$this->data["vista"]	=	"modules/sales/price_list";

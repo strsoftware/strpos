@@ -14,6 +14,7 @@
 
         function setCustomer($post, $user, $accion){
             if ($accion == "crear") {
+                $post['pos_user_id']    =   $user;
                 $this->db->insert("pos_client", $post);
                 return $this->db->insert_id();
 
